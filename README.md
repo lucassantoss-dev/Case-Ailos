@@ -1,28 +1,16 @@
 # Case
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Node with version 16.15.0
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Rodar npm install para baixar os pacotes necessários para o projeto.
 
-## Code scaffolding
+Rodar `ng serve` para um servidor dev. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## API REST
 
-## Build
+Para exemplificar, existe um arquivo json como API Fake para validar o campo de busca, usando um CPF inexistente nesta base vai retornar um erro, já usando algum dos existentes irá retornar o resultado corretamente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # Case-Ilos
