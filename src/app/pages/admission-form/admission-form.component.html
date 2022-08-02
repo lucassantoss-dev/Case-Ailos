@@ -1,0 +1,136 @@
+<div class="admission__form">
+    <div class="admission__form-header">
+        <h1 class="admission__form-title-header">Nova Admissão de Cooperado</h1>
+        <p class="admission__form-subtitle-header">Cadastro/Admissão do Cooperado/ Nova Admissão do Cooperado</p>
+    </div>
+    <div class="admission__form-content">
+        <div class="admission__form-caminho">
+            <mat-stepper class="admission__form-stepper" linear #stepper>
+                <mat-step>
+                </mat-step>
+                <mat-step>
+                </mat-step>
+                <mat-step>
+                </mat-step>
+            </mat-stepper>
+        </div>
+        <div class="admission__form-form">
+            <form [formGroup]="admissionForm">
+                <h2 class="admission__form-title-cpf">
+                    Informe o CPF do futuro Cooperado (a)
+                </h2>
+                <div class="admission__form-subtitle-ad">
+                    <p>Se necessário, você poderá duplicar uma conta existente ou pausar e retomar esse cadastro
+                        futuramente.</p>
+                    <p>Digite apenas os números(sem pontos ou traços)</p>
+                </div>
+                <h2 class="admission__form-cpf">CPF</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <input class="admission__form-input" type="text" formControlName="cpf"
+                            placeholder=" ex: 00000000000" mask="00000000000" required [(ngModel)]="person">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" type="submit" (click)="searchCPF()">
+                            Consultar por CPF
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="admission__form-card" *ngIf="card">
+                        <mat-card class="admission__form-card-infos">
+                            <div class="admission__form-card-title">
+                                <h4 class="admission_form-card-title">Situação cadastral do CPF</h4>
+                                <p class="admission__form-card-subtitle">Consulta na Receita Federal</p>
+                                <div class="row admission__form-card-name">
+                                    <div class="col-md-1">
+                                        <i class="admission__form-card-icon col-md-1 fa fa-user"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p class="admission__form-card-title-name">Nome</p>
+                                        <p class="admission__form-card-subtitle-name">{{persons[0].name}}</p>
+                                    </div>
+                                </div>
+                                <div class="row admission__form-card-name">
+                                    <div class="col-md-1" *ngIf="persons[0].situacao === true">
+                                        <i class="admission__form-card-icon col-md-1 fa fa-check"></i>
+                                    </div>
+                                    <div class="col-md-1" *ngIf="persons[0].situacao === false">
+                                        <i class="admission__form-card-icon col-md-1 fa fa-ban"></i>
+                                    </div>
+                                    <div class="col-md-10" *ngIf="persons[0].situacao === true">
+                                        <p class="admission__form-card-title-situation">Situação do CPF</p>
+                                        <p class="admission__form-card-subtitle-situation">Regular</p>
+                                    </div>
+                                    <div class="col-md-10" *ngIf="persons[0].situacao === false">
+                                        <p class="admission__form-card-title-situation">Situação do CPF</p>
+                                        <p class="admission__form-card-subtitle-situation">Irregular</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="admission__form-card-account" *ngIf="card">
+                        <mat-card class="admission__form-card-infos">
+                            <div class="admission__form-card-title">
+                                <h4 class="admission_form-card-account-title">Conta Aplicacao</h4>
+                                <p class="admission__form-card-account-subtitle">Cooperativa ViaCredi</p>
+                                <div class="row admission__form-card-account">
+                                    <div class="col-md-1">
+                                        <i class="admission__form-card-icon col-md-1 fa fa-box"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p class="admission__form-card-title-account">Número da Conta</p>
+                                        <p class="admission__form-card-subtitle-account">{{persons[0].conta_ap}}</p>
+                                    </div>
+                                </div>
+                                <div class="row admission__form-card-name">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-light admission__form-card-button">Duplicar Conta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="admission__form-card-account" *ngIf="card">
+                        <mat-card class="admission__form-card-infos">
+                            <div class="admission__form-card-title">
+                                <h4 class="admission_form-card-account-title">Conta Corrente</h4>
+                                <p class="admission__form-card-account-subtitle">Cooperativa ViaCredi</p>
+                                <div class="row admission__form-card-account">
+                                    <div class="col-md-1">
+                                        <i class="admission__form-card-icon col-md-1 fa fa-box"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <p class="admission__form-card-title-account">Número da Conta</p>
+                                        <p class="admission__form-card-subtitle-account">{{persons[0].conta_corrente}}</p>
+                                    </div>
+                                </div>
+                                <div class="row admission__form-card-account">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-light admission__form-card-button">Duplicar Conta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admission__form-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-primary" *ngIf="card" (click)="createAdmission()">Iniciar Nova Admissão</button>
+                <button class="btn btn-light" (click)="createAdmission()">Dicas para Admissão</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+[
+    {
+        "cpf": "04280266050",
+        "name": "Maria da Silva",
+        "situacao": true,
+        "conta_corrente": 12345,
+        "conta_ap": 678911
+    },
+    {
+        "cpf": "51723387053",
+        "name": "João Pereira",
+        "situacao": false,
+        "conta_corrente": 1234558,
+        "conta_ap": 172738
+    },
+    {
+        "cpf": "41581154003",
+        "name": "Otavio Martins",
+        "situacao": true,
+        "conta_corrente": 12345478,
+        "conta_ap": 719822
+    },
+    {
+        "cpf": "71218618019",
+        "name": "Miguel Bezerra",
+        "situacao": false,
+        "conta_corrente": 2332111,
+        "conta_ap": 2332110
+    },
+    {
+        "cpf": "78533750005",
+        "name": "Joana Santos",
+        "situacao": false,
+        "conta_corrente": 2223123,
+        "conta_ap": 513986
+    }
+]
